@@ -30,7 +30,7 @@ cpydir /root/spark/assembly/target/scala-2.9.3
 add following code to /root/.bash_profile
 ```
 if [ -f ~/.bashrc ]; then
-   source ~/.bashrc
+      source ~/.bashrc
 fi
 ```
 
