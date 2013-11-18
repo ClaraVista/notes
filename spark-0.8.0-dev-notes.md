@@ -1,14 +1,13 @@
 part 1 - Deployment
 ===================
 
-***local***
------
+## local
 ec2 (launch/start)/login clarabox-<postfix>
 (to change the cluster config, check ~/development/scripts/ec2cmd.sh)
 
-***ec2***
----
-**1. first launch**
+## ec2
+
+### 1. first launch
 
 + compile spark
 ```
@@ -45,25 +44,10 @@ cd ~/toolbox/scripts/
 ```
 (TODO: change init.sh which will download the lastest stable hbase version: see http://mirrors.linsrv.net/apache/hbase/stable/)
 
-
-**2. daily routine**
+### 2. daily routine
 
 + enable hbase
-```
-rm -rf /tmp/hbase-root*
-phdfs -rmr /hbase/-ROOT-
-phdfs -rmr /hbase/.META.
-```
-(can be merged into startcfg)
 
-+ run startup script
-```
-startcfg
-hbase hbck -repair
-```
-(can be merged into startcfg)
-
-
-
-
-
+	```shell
+	$ startcfg
+	```
