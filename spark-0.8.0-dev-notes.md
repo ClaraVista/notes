@@ -5,6 +5,8 @@ Spark EC2 Deployment
 ec2 (launch/start)/login clarabox-<postfix>
 (to change the cluster config, check ~/development/scripts/ec2cmd.sh)
 
+need to know that: slaveNB * ebs-size > 3 * data-vol * 2
+
 ## EC2
 
 ### First launch
