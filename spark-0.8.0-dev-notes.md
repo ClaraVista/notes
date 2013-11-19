@@ -11,6 +11,11 @@ need to know that: slaveNB * ebs-size > 3 * data-vol * 2
 
 ### First launch
 
++ update all package via yum
+```
+yum update
+```
+
 + config cluster using toolbox	
 ```
 git clone https://claravista@github.com/ClaraVista/toolbox.git
@@ -22,8 +27,15 @@ $ ./init.sh
 $ cd
 $ . .bashrc
 ```
-(TODO: change init.sh which will download the lastest stable hbase version: see http://mirrors.linsrv.net/apache/hbase/stable/)
 
++ download the lastest stable version of HBASE, e.g.
+```
+cd
+wget http://mirrors.linsrv.net/apache/hbase/hbase-0.94.12/hbase-0.94.12.tar.gz
+tar zxf hbase-0.94.12.tar.gz
+rm hbase-0.94.12.tar.gz
+```
+(TODO: change init.sh which will download the lastest stable hbase version: see http://mirrors.linsrv.net/apache/hbase/stable/)
 
 + compile spark
 ```
@@ -54,9 +66,8 @@ fi
 
 + move data via hdfs-over-ftp
 ```
-$ cd
-$ cd $FTP
-./hdfs-over-ftp.sh_HDFS
+$ cd $FTP_HDFS
+./hdfs-over-ftp.sh
 ```
 Enable port 20-21 for the master's security group from AWS console<br>
 Start FTPClaravista on ec2, associated an elastic IP<br>
@@ -66,9 +77,18 @@ $ ec2ftp
 ```
 On FTPClaravista
 ```
+$ sudo su clarabox
+$ cd ~/data #the directory contains data 
 $ ftp <master of cluter>
 ```
 login = pwd = root
+Log on ftp
+```
+binary
+prompt
+mput *
+put <file_name>
+```
 
 ### Daily startup cmd
 
