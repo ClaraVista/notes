@@ -42,7 +42,10 @@ cpydir /root/spark/assembly/target/scala-2.9.3
 ```
 
 + auto load .bashrc (this part can be merged into init.sh)
-add following code to /root/.bash_profile	
+add following code to /root/.bash_profile
+```
+vim /root/.bash_profile
+```
 ```
 if [ -f ~/.bashrc ]; then
       source ~/.bashrc
