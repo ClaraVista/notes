@@ -16,10 +16,15 @@ need to know that: slaveNB * ebs-size > 3 * data-vol * 2
 yum update
 ```
 
-+ config cluster using toolbox	
++ get some git repo
 ```
+cd 
 git clone https://claravista@github.com/ClaraVista/toolbox.git
+git clone https://github.com/ClaraVista/sharkQuery.git
+git clone https://github.com/klout/brickhouse.git
 ```
+
++ config cluster using toolbox	
 passwd = topcoder2013	
 ```
 $ cd ~/toolbox/scripts/
