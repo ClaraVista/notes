@@ -11,6 +11,20 @@ need to know that: slaveNB * ebs-size > 3 * data-vol * 2
 
 ### First launch
 
++ config cluster using toolbox	
+```
+git clone https://claravista@github.com/ClaraVista/toolbox.git
+```
+passwd = topcoder2013	
+```
+$ cd ~/toolbox/scripts/
+$ ./init.sh 
+$ cd
+$ . .bashrc
+```
+(TODO: change init.sh which will download the lastest stable hbase version: see http://mirrors.linsrv.net/apache/hbase/stable/)
+
+
 + compile spark
 ```
 vim ~/spark/project/SparkBuild.scala
@@ -34,19 +48,6 @@ if [ -f ~/.bashrc ]; then
       source ~/.bashrc
 fi
 ```
-
-+ config cluster using toolbox	
-```
-git clone https://claravista@github.com/ClaraVista/toolbox.git
-```
-passwd = topcoder2013	
-```
-$ cd ~/toolbox/scripts/
-$ ./init.sh 
-$ cd
-$ . .bashrc
-```
-(TODO: change init.sh which will download the lastest stable hbase version: see http://mirrors.linsrv.net/apache/hbase/stable/)
 
 + move data via hdfs-over-ftp
 ```
